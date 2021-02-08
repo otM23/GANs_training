@@ -28,8 +28,6 @@ DATASET_CUSTOMBINARY = 'CUSTOM_BINARY'
 # losses
 adversarial_loss = torch.nn.CrossEntropyLoss()
 
-# get the folder path
-real_path  = os.path.realpath(__file__) # to remove
 
 ################################################################################
 ################################################################################
@@ -443,7 +441,6 @@ def main(config_optim = 'configs/cifar10/lenet_adam.json'):
     # Copy this file & config to args.out
     if not os.path.isdir(args.out):
         os.makedirs(args.out)
-#    shutil.copy(os.path.realpath(__file__), args.out)
     shutil.copy(real_path, args.out)
 
     if args.config is not None:

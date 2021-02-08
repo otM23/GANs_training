@@ -11,7 +11,7 @@ import torch
 from torch.optim.optimizer import Optimizer, required
 from functools import reduce
 
-#import pdb 
+#import pdb # for debug only
 
 
 class LSGD_improve(Optimizer):

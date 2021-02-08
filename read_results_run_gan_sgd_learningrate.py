@@ -15,10 +15,10 @@ import matplotlib.pyplot as plt
 ### columns display 
 pd.options.display.max_columns = 15
 
-option_save = "save" # "save"#"save"
+option_save = "" # "save"#"save"
 
 
-### res sgd
+### sgd: read result files
 
 config_files = [
             [1e-2, 'result/sgd_reduced_gan_50_rungansgdsimplified_lr_0.01.csv'],
@@ -52,13 +52,3 @@ pltg.Plot_plot(res_g_loss[:-1],labels = labels[:-1],option=option_save,path ="im
                xlabel ="epoch", ylabel ="loss generator",Nset_tick_x = False,bbox_to_anchor_0 = (0.6,.95),
                mark = ['o','v', 's', '*'])
 plt.show()
-
-#### print first figure
-#pltg.Plot_plot([res[0]], labels = [''], option=option_save,path ="image_server/readf_res_gan_SGDreducedrun_fluc",ImageName="",xtitle="",
-#               xlabel ="epoch", ylabel ="accuracy",Nset_tick_x = False)
-#plt.show()
-#
-#res_g_loss1 = [[res_g_loss[0][0][5:], res_g_loss[0][1][5:]]]
-#pltg.Plot_plot(res_g_loss1, labels = [''], option=option_save,path ="image_server/readf_res_gan_SGDreducedrun_generatorloss_fluc",ImageName="",xtitle="",
-#               xlabel ="epoch", ylabel ="loss generator",Nset_tick_x = False)
-#plt.show()
