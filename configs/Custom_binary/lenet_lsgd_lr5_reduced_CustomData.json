@@ -1,0 +1,31 @@
+{
+    "comment": " the initial value for epochs was 100",
+    "dataset": "CUSTOM_BINARY",
+    "epochs": 50,
+    "batch_size": 128,
+    "val_batch_size": 128,
+    "random_crop": false,
+    "random_horizontal_flip": false,
+    "normalizing_data": true,
+    "arch_file_discriminator": "models/DiscriminatorBase.py",
+    "arch_name_discriminator": "Discriminator_simple",
+    "arch_file_generator": "models/GeneratorLinear.py",
+    "arch_name_generator": "Generator_simple",
+    "optim_name": "LSGD_improve",
+    "optim_args_discriminator": {
+        "lr": 1e-4,
+        "momentum": 0.0,
+        "weight_decay": 0.01,
+        "max_memory": 20,
+        "iter_max" : 20,
+        "clip_val": [5,5]
+    },
+    "optim_args_generator": {
+        "lr": 1e-4,
+        "momentum": 0.0,
+        "weight_decay": 0.01,
+        "max_memory": 20,
+        "iter_max" : 20,
+        "clip_val": [5,5]
+    }
+}
