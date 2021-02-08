@@ -13,12 +13,12 @@
     "arch_name_generator": "Generator_simple",
     "optim_name": "SGD",
     "optim_args_discriminator": {
-        "lr": 5e-3,
+        "lr": 5e-4,
         "momentum": 0.0,
         "weight_decay": 0.01
     },
     "optim_args_generator": {
-        "lr": 5e-3,
+        "lr": 5e-4,
         "momentum": 0.0,
         "weight_decay": 0.01
     }
