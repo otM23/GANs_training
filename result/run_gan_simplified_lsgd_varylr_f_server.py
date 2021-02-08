@@ -17,8 +17,6 @@ import numpy as np
 
 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 from torch.autograd import Variable
 from optim.lsgd_improve import LSGD_improve
 from utils.datasets_utils.data_gen_class import CUSTOM_BINARY
@@ -30,8 +28,6 @@ DATASET_CUSTOMBINARY = 'CUSTOM_BINARY'
 # losses
 adversarial_loss = torch.nn.CrossEntropyLoss()
 
-# get the folder path
-real_path  = os.path.realpath(__file__) # to remove
 
 ################################################################################
 ################################################################################
@@ -431,14 +427,6 @@ def main(config_optim = 'configs/cifar10/lenet_adam.json'):
     # initialise epoch
     start_epoch = 1
 
-    # Load checkpoint
-    if args.resume is not None:
-        print('==> Resuming from checkpoint..')
-        assert os.path.exists(args.resume), 'Error: no checkpoint file found'
-        checkpoint = torch.load(args.resume)
-        discriminator.load_state_dict(checkpoint['model'])
-        start_epoch = checkpoint['epoch']
-
     # All config
     print('===========================')
     for key, val in vars(args).items():
@@ -453,8 +441,7 @@ def main(config_optim = 'configs/cifar10/lenet_adam.json'):
     # Copy this file & config to args.out
     if not os.path.isdir(args.out):
         os.makedirs(args.out)
-#    shutil.copy(os.path.realpath(__file__), args.out)
-    shutil.copy(real_path, args.out)
+    shutil.copy(os.path.realpath(__file__), args.out)
 
     if args.config is not None:
         shutil.copy(args.config, args.out)

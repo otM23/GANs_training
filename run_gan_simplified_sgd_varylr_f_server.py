@@ -439,7 +439,7 @@ def main(config_optim = 'configs/cifar10/lenet_adam.json'):
     # Copy this file & config to args.out
     if not os.path.isdir(args.out):
         os.makedirs(args.out)
-    shutil.copy(real_path, args.out)
+    shutil.copy(os.path.realpath(__file__), args.out)
 
     if args.config is not None:
         shutil.copy(args.config, args.out)
